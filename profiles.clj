@@ -5,18 +5,24 @@
                   ;; [lein-haml-sass "0.2.4"]
                   ;; [lein-midje "2.0.1"]
 
-                  [cider/cider-nrepl "0.7.0"]; better IDEs
+                  ;; development
+                  [cider/cider-nrepl "0.8.0-SNAPSHOT"]; better IDEs
                   [mvxcvi/whidbey "0.4.1"]; pretty printer
                   [lein-try "0.4.3"] ; try libs from CLI
                   [lein-ancient "0.5.5"];; find outdated things; for this file use upgrade-profiles
+
+                  [lein-plz "0.3.0"] ; plz add om hiccup
+                  
+                  ;; deployment
+                  [lein-bin "0.3.4"] ; plz add om hiccup
 
                   ;; web
                   [hiccup-bridge "1.0.1"] ;; convert html to hiccup
 
                   ;; linters
+                  [lein-checkall "0.1.1"]; all linters at once
                   ;; [lein-kibit "0.0.8"]
-                  [lein-checkall "0.1.1"]
-                  [lein-gitify "0.1.0"]
+
                   ]
         :dependencies [
                        [slamhound "1.5.5"]
