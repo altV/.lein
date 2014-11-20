@@ -11,14 +11,14 @@
                   [lein-try "0.4.3"] ; try libs from CLI
                   [lein-ancient "0.5.5"];; find outdated things; for this file use upgrade-profiles
                   [lein-ubersource "0.1.1"] ; download every dependency to target/ubersource
-                  ;; [lein-plz "0.3.0"] ; plz add om hiccup
+                  [lein-plz "0.3.0" :exclusions [[rewrite-clj] [ancient-clj]]] ; plz add om hiccup
 
                   ;; deployment
                   [lein-bin "0.3.4"] ; aint work, packs to .exe
 
                   ;; web
-                  ;; [hiccup-bridge "1.0.1"] ;; convert html to hiccup
-                  [lein-ring "0.8.13"] ;; convert html to hiccup
+                  ;; [hiccup-bridge "1.0.1"] ; convert html to hiccup
+                  ;; [lein-ring "0.8.13"] ; "rails server"
 
                   ;; linters
                   [lein-checkall "0.1.1"]; all linters at once
@@ -31,6 +31,25 @@
                        ]
         :aliases {"slamhound" ["run" "-m" "slam.hound"]
                   "r" ["run"]}}}
+
+;; https://github.com/dgrnbrg/dotfiles/blob/master/profiles.clj
+;; {:user {:dependencies [[spyscope "0.1.3"]
+;;                        [criterium "0.4.1"]
+;;                        [redl "0.1.0"]] 
+;;         :injections [(require 'spyscope.core)
+;;                      (require '[redl complete core])]
+;;         :plugins [[clj-stacktrace "0.2.4"]
+;;                   [lein-autotest "1.2.0"]
+;;                   [lein-guzheng "0.4.5"]
+;;                   [jonase/kibit "0.0.4"]
+;;                   [lein-annotations "0.1.0"]
+;;                   [varspotting "0.0.2"]
+;;                   [lein-vanity "0.1.0"]
+;;                   [lein-midje "2.0.4"]
+;;                   [lein-pprint "1.1.1"]
+;;                   [lein-autoexpect "0.2.2"]
+;;                   [lein-expectations "0.0.7"]]}
+;;  :offline {:offline? true}}
 
 ;; https://github.com/cldwalker/leinfiles/blob/master/profiles.clj{
 ;;  { :user {
