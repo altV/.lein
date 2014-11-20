@@ -13,6 +13,8 @@
                   [lein-ubersource "0.1.1"] ; download every dependency to target/ubersource
                   [lein-plz "0.3.0" :exclusions [[rewrite-clj] [ancient-clj]]] ; plz add om hiccup
 
+                  [io.aviso/pretty "0.1.13"] ; more prettier stacktraces than clj-stacktrace
+
                   ;; deployment
                   [lein-bin "0.3.4"] ; aint work, packs to .exe
 
@@ -29,6 +31,11 @@
                        [slamhound "1.5.5"]
                        [alembic "0.3.2"]
                        ]
+
+        :repl-options {
+                       :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
+                       }
+
         :aliases {"slamhound" ["run" "-m" "slam.hound"]
                   "r" ["run"]}}}
 
@@ -38,7 +45,7 @@
 ;;                        [redl "0.1.0"]] 
 ;;         :injections [(require 'spyscope.core)
 ;;                      (require '[redl complete core])]
-;;         :plugins [[clj-stacktrace "0.2.4"]
+;;         :plugins [[clj-stacktrace "0.2.4"] ; pretty stacktraces
 ;;                   [lein-autotest "1.2.0"]
 ;;                   [lein-guzheng "0.4.5"]
 ;;                   [jonase/kibit "0.0.4"]
